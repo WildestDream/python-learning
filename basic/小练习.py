@@ -26,3 +26,10 @@ print(?)
 print(L[0][0])
 print(L[1][1])
 print(L[2][2])
+
+n1 = 255
+n2 = 1000
+res1 = str(hex(n1))
+res2 = str(hex(n2))
+print(res1)
+print(res2)

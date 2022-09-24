@@ -2,21 +2,21 @@
 # -*- coding: utf-8 -*-
 
 # Python 3的字符串使用Unicode，直接支持多语言
-# ord()函数获取字符的整数表示
-print(ord("A"))
 
-print(ord("我"))
+# 一个unicode字符表示为:01001110|00101101
+# 也可以表示为一个整数（0-65535），也可以进一步表示成两个16进制数（两个字节）
 
-# chr()函数把编码转换为对应的字符
-print(chr(65))
+# 表示方式1，一个整数
+c = "中"
+# 字符 "中" 转换为 unicode 整数
+print("ord", ord(c))  # 20013
+print("chr", chr(20013))  # 中
 
-print(chr(25105))
-
-str = '\u4e2d\u6587'
-
-print(str)  # 中文
-
-print(str == "中文")  # True
+# 表示方式2，两个 16进制数，每个两位的16进制数代表一个字节
+# 01001110 == 4e
+# 00101101 == 2d
+# 字符 "中" 转换为 unicode 的两个字节(两个16进制数: 4e, 2d)，\u 代表 unicode 字符
+print('\u4e2d')  # 中
 
 #  utf-8 , gbk
 
@@ -28,10 +28,10 @@ print("bytes", len(x), x)  # bytes 3 b'ABC'
 
 # 支持中文的编码方式
 x = '中文'.encode('utf-8')
-print("bytes", len(x), x)  # bytes 6 b'\xe4\xb8\xad\xe6\x96\x87' 每个中文字符在 utf-8 下3个字节
+print("utf-8 bytes", len(x), x)  # bytes 6 b'\xe4\xb8\xad\xe6\x96\x87' 每个中文字符在 utf-8 下3个字节, \x 表示后面的数是 16进制
 
 x = '中文'.encode('gbk')
-print("bytes", len(x), x)  # bytes 4 b'\xd6\xd0\xce\xc4' 每个中文字符在 gbk 下2个字节
+print("gbk bytes", len(x), x)  # bytes 4 b'\xd6\xd0\xce\xc4' 每个中文字符在 gbk 下2个字节，\x 表示后面的数是 16进制
 
 # 解码
 x = b'ABC'.decode('ascii')
