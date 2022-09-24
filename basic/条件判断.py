@@ -38,7 +38,7 @@ else:
 
 height = 1.88
 weight = 74.8
-bmi_value = weight / (height * height)
+bmi_value = weight / (height ** 2)
 print("bmi_value:", bmi_value)
 
 if bmi_value < 18.5:
