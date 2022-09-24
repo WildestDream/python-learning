@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 # 整数
 
 # 可以处理任意大小的整数，且允许 _ 分割
