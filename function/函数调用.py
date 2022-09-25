@@ -1,4 +1,5 @@
-from function.internal_func import my_sum, my_abs, my_print
+# -*- coding: utf-8 -*-
+from function.函数练习 import my_sum, my_abs, my_print
 
 # from 包名.文件名 import 函数名
 
