@@ -15,7 +15,21 @@ print(isinstance(100, Iterator))  # False
 print(isinstance((1, 2), Iterator))  # False
 
 """
-凡是可作用于for循环的对象都是Iterable类型；
-
-凡是可作用于next()函数的对象都是Iterator类型，它们表示一个惰性计算的序列
+Iterator:惰性计算， 只能 next, 不能 for
+Iterable:一次性存储内存，可以 for，但是 for 的本质还是调用 Iterator
 """
+
+for x in [1, 2, 3, 4, 5]:
+    pass
+
+# 首先获得Iterator对象:
+it = iter([1, 2, 3, 4, 5])
+# 循环:
+while True:
+    try:
+        # 获得下一个值:
+        x = next(it)
+        print(x)
+    except StopIteration:
+        # 遇到StopIteration就退出循环
+        break
