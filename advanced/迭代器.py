@@ -22,6 +22,7 @@ Iterable:一次性存储内存，可以 for，但是 for 的本质还是调用 I
 for x in [1, 2, 3, 4, 5]:
     pass
 
+# 通过迭代器遍历 list
 # 首先获得Iterator对象:
 it = iter([1, 2, 3, 4, 5])
 # 循环:
