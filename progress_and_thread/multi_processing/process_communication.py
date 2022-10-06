@@ -3,8 +3,9 @@ import os
 from multiprocessing import Queue, Process
 from time import sleep
 
-# process 通信：通过 Queue,
-# Pipes 通信见：subprocess_test.py
+# process 通信两种方式：
+# 方式1：通过 Queue,
+# 方式2：通过 Pipes （见：subprocess_test.py）
 def read_task(q):
     while True:
         item = q.get(True) #True => block get
