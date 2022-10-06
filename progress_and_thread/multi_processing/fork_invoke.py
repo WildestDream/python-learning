@@ -8,12 +8,17 @@ import os
 # 所以，父进程要记下每个子进程的ID，而子进程只需要调用 getppid() 就可以拿到父进程的ID。
 #
 # Python的os模块封装了常见的系统调用，其中就包括fork，可以在Python程序中轻松创建子进程：
+
+# 但是,windows 系统没有 fork 操作
 print('Process (%s) start...' % os.getpid())
 # Only works on Unix/Linux/Mac:
+num = 123
 pid = os.fork()
 if pid == 0:
     # 该分支在子进程执行
     print('I am child process (%s) and my parent is %s.' % (os.getpid(), os.getppid()))
+    print(num)
 else:
     # 该分支在父进程执行
     print('I (%s) just created a child process (%s).' % (os.getpid(), pid))
+    print(num)
