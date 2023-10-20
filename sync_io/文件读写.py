@@ -8,7 +8,7 @@ try:
 finally:
     if f:
         f.close()
-
+# add
 # 更加优雅的写法, 不需要显示的关流
 with open(file='data', mode='r', encoding='utf-8', errors='ignore') as f:
     print(f.read())
